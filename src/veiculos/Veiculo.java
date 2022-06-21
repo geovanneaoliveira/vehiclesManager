@@ -8,15 +8,14 @@ public class Veiculo {
     private String modelo;
     private String dataAquisicao;
     private ArrayList<Manutencao> manutencoes = new ArrayList<>();
-    public static Scanner in = new Scanner(System.in);
     public Veiculo(){
         Scanner in = new Scanner(System.in);
         System.out.print("Informe a placa do veículo: ");
-        this.placa = in.nextLine();
+        this.setPlaca(in.nextLine());
         System.out.print("Modelo: ");
-        this.modelo = in.nextLine();
+        this.setModelo(in.nextLine());
         System.out.print("Data de Aquisição (DD/MM/AAAA): ");
-        this.dataAquisicao = in.nextLine();
+        this.setDataAquisicao(in.nextLine());
     }
 
     public int repeteServico(String descricao){

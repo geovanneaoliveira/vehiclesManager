@@ -10,15 +10,15 @@ public class Manutencao {
     public Manutencao(){
         Scanner in = new Scanner(System.in);
         System.out.print("Número da manutenção: ");
-        this.numero = in.nextInt();
+        this.setNumero(in.nextInt());
         in.nextLine();
-        System.out.print("Custo de manutenção: ");
-        this.custo = in.nextDouble();
+        System.out.print("Custo de manutenção: R$");
+        this.setCusto(in.nextDouble());
         in.nextLine();
         System.out.print("Descrição: ");
-        this.descricao = in.nextLine();
-        System.out.print("Duração: ");
-        this.tempoParado = in.nextInt();
+        this.setDescricao(in.nextLine());
+        System.out.print("Duração(dias): ");
+        this.setTempoParado(in.nextInt());
         in.nextLine();
     }
 
