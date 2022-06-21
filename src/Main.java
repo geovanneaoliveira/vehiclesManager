@@ -16,14 +16,17 @@ public class Main {
             System.out.println("(2) ANOTAR MANUTENÇÃO");
             System.out.println("(3) COMPARAR SUCATEAMENTO");
             System.out.println("(4) REPETIÇÃO DE SERVIÇO");
-            System.out.println("(5) INDICE DE SUCATEAMENTO");
-            System.out.println("(6) CUSTO MEDIO DE MANUTENÇÃO");
-            System.out.println("(7) SAIR");
+            System.out.println("(5) ÍNDICE DE SUCATEAMENTO");
+            System.out.println("(6) CUSTO MÉDIO DE MANUTENÇÃO");
+            System.out.println("(0) SAIR");
             System.out.print("Escolha: ");
             int escolha = in.nextInt();
             in.nextLine();
             switch (escolha) {
+                case 0:
+                    break;
                 case 1:
+                    System.out.println();
                     veiculos.add(new Veiculo());
                     break;
                 case 2:
@@ -32,6 +35,7 @@ public class Main {
                     if (procuraVeiculo(placa) == -1) {
                         break;
                     }
+                    System.out.println("ANOTE OS DADOS DA MANUTENÇÃO");
                     veiculos.get(procuraVeiculo(placa)).getManutencoes().add(new Manutencao());
                     break;
                 case 3:
@@ -45,7 +49,7 @@ public class Main {
                         System.out.println("O veículo de placa '" + placa1 + "' está menos sucateado!");
                     } else if (compSucateamento == 0) {
                         System.out.println("Ambos estão igualmente sucateados!");
-                    } else if(compSucateamento == -1){
+                    } else if (compSucateamento == -1) {
                         System.out.println("O veículo de placa '" + placa1 + "' está mais sucateado!");
                     } else {
                         break;
@@ -79,8 +83,8 @@ public class Main {
                     }
                     System.out.printf("O custo médio de manutenção é de: R$%.2f!",
                             veiculos.get(procuraVeiculo(placaMedioManutencao)).custoMedioManutencoes());
-                case 7:
-                    break;
+                default:
+                    System.out.print("Escolha inválida, tente novamente!");
             }
             if (escolha == 7) {
                 break;
@@ -92,7 +96,7 @@ public class Main {
     public static int comparaSucateamento(Veiculo veiculo) {
         System.out.print("Digite a placa do segundo veículo: ");
         String placa = in.nextLine().toUpperCase();
-        if (procuraVeiculo(placa)==-1){
+        if (procuraVeiculo(placa) == -1) {
             return 10;
         }
         if (veiculo.indiceSucateamento() > veiculos.get(procuraVeiculo(placa)).indiceSucateamento()) {

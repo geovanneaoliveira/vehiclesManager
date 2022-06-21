@@ -12,7 +12,7 @@ public class Manutencao {
         System.out.print("Número da manutenção: ");
         this.setNumero(in.nextInt());
         in.nextLine();
-        System.out.print("Custo de manutenção: R$");
+        System.out.print("Custo da manutenção: R$");
         this.setCusto(in.nextDouble());
         in.nextLine();
         System.out.print("Descrição: ");
